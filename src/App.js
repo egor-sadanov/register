@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useAlert } from "react-alert";
 import './App.css'
 import rules from './rules.pdf'
@@ -10,9 +10,7 @@ function App() {
 		name: "",
 		email: "",
     phone: "",
-    adults: 1,
-    kids: 1,
-    comment: ""
+    subscribe: "off"
 	})
 
   function encode(data) {
@@ -23,6 +21,7 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
+    console.log(formData)
 		fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -42,11 +41,6 @@ function App() {
     })
   }
 
-  useEffect(() => {
-    document.getElementById("adults").value = formData.adults
-    document.getElementById("kids").value = formData.kids
-  })
-
   const handleChange = e => setFormData({...formData, [e.target.name]: e.target.value })
   const alert = useAlert()
   const star = <span style={{color: "red"}}>*</span>
@@ -54,16 +48,6 @@ function App() {
   return (
     <div className="app">
       <main>
-        <div className="wrapper">
-          <div className="head">
-            <p className="yolki-head">Yölki</p>
-            <div className="inner-head">
-              <p>Russian House</p>
-              <p>January 9</p>
-              <p>12:00pm</p>
-            </div>
-          </div>
-        </div>
         <div className="flexbox">
           <div className="message">
             <p>Please be aware that due to the current covid restrictions in place, we are limited by the number of partons for the event. That said, we encourage you to purchase tickets in advance.</p>
@@ -84,6 +68,7 @@ function App() {
                   type="text" 
                   name="name" 
                   id="name" 
+                  className="wide" 
                   value={formData.name} 
                   onChange={handleChange} 
                   placeholder="enter your name"
@@ -96,6 +81,7 @@ function App() {
                   type="email" 
                   name="email"
                   id="email" 
+                  className="wide" 
                   value={formData.email} 
                   onChange={handleChange} 
                   placeholder="enter your email"
@@ -107,34 +93,24 @@ function App() {
                 <input 
                   type="text" 
                   name="phone" 
-                  id="phone" 
+                  id="phone"
+                  className="wide"  
                   value={formData.phone} 
                   onChange={handleChange} 
                   placeholder="enter your phone"
                   required
                 />
               </div>
-              <div className="selection-box">
-                <div>
-                  <label htmlFor="adults">Adults</label><br />
-                  <select name="adults" id="adults" onChange={handleChange}>
-                    {[...Array(11)].map((x, i) => <option key={i}>{i}</option>)}
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="kids">Kids</label><br />
-                  <select name="kids" id="kids" onChange={handleChange}>
-                    {[...Array(11)].map((x, i) => <option key={i}>{i}</option>)}
-                  </select>
-                </div>
+              <div>
+                <input 
+                  type="checkbox" 
+                  name="subscribe" 
+                  id="subscribe" 
+                  value="subscribed" 
+                  onChange={handleChange} 
+                />
+                <label htmlFor="subscribe">I want to receive monthly newsletters from the Young Guard Collective</label>
               </div>
-              <textarea 
-                name="comment" 
-                rows="4"
-                value={formData.comment} 
-                onChange={handleChange} 
-                placeholder="comments (optional)"
-              />
               <div style={{textAlign: "center"}}>
                 <button id="submit" type="submit" className="submit-btn">submit</button>
               </div>

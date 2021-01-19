@@ -2,15 +2,6 @@ body {
   font-family: "Open Sans", Helvetica;
 }
 
-.wrapper {
-  position: relative;
-  background: url('./yolka.jpg') no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 0;
-  padding-top: 149.85%;
-}
-
 div .head {
   overflow: auto;
   position: absolute;
@@ -71,7 +62,7 @@ div .head {
   }
 }
 
-input {
+.wide {
   font-size: 14px;
   margin: 0.5em 0 1em;
   padding: 5px 10px;
@@ -83,15 +74,15 @@ input {
   color: rgb(225, 225, 221);
   border-radius: 0px;
 }
-input {
+.wide {
   -webkit-border-radius: 0px;
   -webkit-appearance: none;
 }
-input:focus {
+.wide:focus {
   outline: none;
   box-shadow: none;
 }
-input::placeholder {
+.wide::placeholder {
   color: rgb(121, 121, 121);
 }
 

@@ -1,0 +1,211 @@
+body {
+  font-family: "Open Sans", Helvetica;
+}
+
+.wrapper {
+  position: relative;
+  background: url('./yolka.jpg') no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 0;
+  padding-top: 149.85%;
+}
+
+div .head {
+  overflow: auto;
+  position: absolute;
+  top: 2em;
+  bottom: 0;
+  right: 0;
+  left: 2em;
+}
+.head {
+  font-family: Comfortaa, Helvetica;
+  color: rgb(225, 225, 221);
+}
+.yolki-head {
+  font-size: 4em;
+  margin: 0;
+}
+.inner-head {
+  margin-left: 0.2em;
+  font-size: 1.2em;
+}
+.inner-head > p {
+  margin: 0;
+  margin-bottom: 0.3em;
+}
+@media (min-width: 450px) {
+  div .head {
+    width: 50%;
+    top: 3em;
+    margin: auto;
+    text-align: center;
+  }
+  .yolki-head {
+    font-size: 6em;
+  }
+  .inner-head {
+    margin-left: 0;
+    font-size: 1.8em;
+  }
+}
+
+.message {
+  margin: 1em 2em 0;
+}
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: black;
+  color: rgb(225, 225, 221);
+}
+.form-container {
+  margin: 2em;
+  margin-bottom: 0;
+}
+@media (min-width: 450px) {
+  .form-container {
+    margin: 2em auto 0;
+  }
+}
+
+input {
+  font-size: 14px;
+  margin: 0.5em 0 1em;
+  padding: 5px 10px;
+  width: 100%;
+  min-width: 18em;
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid rgb(225, 225, 221);
+  color: rgb(225, 225, 221);
+  border-radius: 0px;
+}
+input {
+  -webkit-border-radius: 0px;
+  -webkit-appearance: none;
+}
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+input::placeholder {
+  color: rgb(121, 121, 121);
+}
+
+.selection-box {
+  text-align: center;
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+}
+select {
+  margin-top: 0.5em;
+  width: 7em; 
+  font-size: 14px;
+  padding: 3px;
+  color: rgb(225, 225, 221);
+  border: 1px solid rgb(225, 225, 221);
+  background-color: transparent;
+}
+select:focus {
+  outline: none;
+  box-shadow: none;
+}
+select {
+  -webkit-border-radius: 0px;
+  -webkit-appearance: none;
+}
+
+textarea {
+  font-size: 14px;
+  margin-top: 1.5em;
+  padding: 5px 10px;
+  resize: none;
+  width: 100%;
+  min-width: 18em;
+  box-sizing: border-box;
+  background: transparent;
+  font-family: Helvetica;
+  border: 1px solid rgb(225, 225, 221);
+  color: rgb(225, 225, 221);
+  border-radius: 0px;
+}
+textarea {
+  -webkit-border-radius: 0px;
+  -webkit-appearance: none;
+}
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+textarea::placeholder {
+  color: rgb(121, 121, 121);
+}
+
+.submit-btn {
+  font-family: Comfortaa;
+  margin-top: 1.5em;
+  font-size: 16px;
+  padding: 0.6em 1em;
+  border: none;
+  background-color: transparent;
+  border: 1px solid rgb(225, 225, 221);
+  color: rgb(225, 225, 221);
+}
+.submit-btn:active, .submit-btn:hover, .submit-btn:focus {
+  cursor: pointer;
+  color: purple;
+  border: none;
+  outline: none;
+  border: 1px solid purple;
+}
+
+footer {
+  padding: 0 1em;
+  background-color: black;
+  color: rgb(225, 225, 221);
+}
+@media (min-width: 450px) {
+  select {
+    width: 6em; 
+  }
+  .submit-btn {
+    padding: 0.6em;
+  }
+  footer {
+    padding: 0 2em;
+  }
+}
+
+.policy {
+  margin: 0;
+  padding: 1.5em 0;
+  text-align: center;
+  font-size: 14px;
+}
+.code-link {
+  color: rgb(225, 225, 221);
+}
+.code-link:active, .code-link:hover {
+  color: purple;
+}
+
+.reference {
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgb(121, 121, 121);
+  cursor: default;
+}
+.signature {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(121, 121, 121);
+}
+.signature:active, .signature:hover {
+  color: purple;
+}
